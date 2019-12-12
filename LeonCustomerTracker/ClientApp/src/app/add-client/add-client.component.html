@@ -1,0 +1,71 @@
+<h1>Add Client Form</h1>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label>
+      First Name*:
+      <input type="text" formControlName="firstName" class="form-control">
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName" class="form-control">
+    </label>
+
+    <label for="birthday">Birthday*</label>
+    <input type="date" id="birthday" name="birthday" formControlName="birthday">
+
+    <label for="inputEmail">Email address*</label>
+    <input type="email" class="form-control" id="inputEmail" formControlName="email">
+
+    <label for="quantity">Total Spending</label>
+    <input type="number" name="quantity" min="0" value="0" formControlName="totalSpending">
+
+  </div>
+  <button class="btn btn-primary" style="display:block" type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ! Junk Sample Code Past here -->
+<!--<div>
+  <p>Form value: {{profileForm.controls["birthday"].value}} </p>
+</div>-->
+
+<!--<form>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input required type="text" class="form-control" id="firstNameInput">
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastNameInput">
+  </div>
+
+  <label for="start">Birthday</label>
+  <input type="date" id="birthday" name="birthday"
+         >
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>-->
