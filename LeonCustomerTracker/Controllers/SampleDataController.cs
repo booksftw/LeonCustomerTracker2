@@ -44,5 +44,20 @@ namespace LeonCustomerTracker.Controllers
                 }
             }
         }
+        // ! Sample
+        //[HttpPost("[action]")]
+        //public void AddClient([FromBody] ClientDetailsDto clientData) // ! Set Type on front and backend
+        //{
+        //    // init cache variable
+        //    var result = new Client();
+        //    // fillter error check
+
+        //    // the work
+        //    result.first_name = clientData.firstName
+        //    _db.Add(result);
+        //    _db.SaveChanges();
+
+        //    // return if any
+        //}
     }
 }

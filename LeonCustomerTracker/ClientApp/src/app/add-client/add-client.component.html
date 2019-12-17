@@ -20,7 +20,7 @@
     <input type="email" class="form-control" id="inputEmail" formControlName="email">
 
     <label for="quantity">Total Spending</label>
-    <input type="number" name="quantity" min="0" value="0" formControlName="totalSpending">
+    <input type="number" name="quantity" min="0" max="2147483647" value="0" formControlName="totalSpending"> <!-- Javscript Max Limit -->
 
   </div>
   <button class="btn btn-primary" style="display:block" type="submit" [disabled]="!profileForm.valid">Submit</button>

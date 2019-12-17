@@ -1,4 +1,6 @@
 using LeonCustomerTracker.Database;
+using LeonCustomerTracker.Services;
+using LeonCustomerTracker.Utilities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,11 @@ namespace LeonCustomerTracker
 
             // * Sample of Adding DB for controllers
             services.AddDbContext<PrimaryDatabaseContext>();
+
+
+            // * Can be polished up to singleton or something.
+            services.AddTransient<IClientService, ClientService>();
+            services.AddTransient<IGeneralUtil, GeneralUtil>();
 
             // * Sample of injecting a dependency into controller
             //services.AddSingleton<IMyDependency, MyDependency>();

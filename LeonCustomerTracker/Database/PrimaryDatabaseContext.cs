@@ -5,16 +5,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using LeonCustomerTracker.Models;
+using LeonCustomerTracker.Entities;
 
 namespace LeonCustomerTracker.Database
 {
     public class PrimaryDatabaseContext : DbContext
     {
-        // * Samples of Tables in DB
+        // ! Samples of Tables in DB
         //public DbSet<Blog> Blogs { get; set; }
         //public DbSet<Post> Posts { get; set; }
-
         public DbSet<Client> Clients { get; set; }
 
         public PrimaryDatabaseContext(DbContextOptions<PrimaryDatabaseContext> options) : base(options)
@@ -22,13 +21,13 @@ namespace LeonCustomerTracker.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-1S3IDSC;Initial Catalog=leoncustomertracker;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-PIGFLT3;Initial Catalog=leoncustomertracker;Integrated Security=True");
         }
 
         // Sample code for relationships
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // * Sample of creating relationships
+            // ! Sample of creating relationships
             //modelBuilder.Entity<ActionPlan>()
             //    .HasMany(a => a.Report)
             //    .WithOne();
@@ -49,7 +48,7 @@ namespace LeonCustomerTracker.Database
         }
 
 
-        // * Sample of defining the tables and their relationships
+        // ! Sample of defining the tables and their relationships
         //public class ActionPlan
         //{
         //    [Key]
@@ -78,7 +77,7 @@ namespace LeonCustomerTracker.Database
         //    public FoodItem FoodItem { get; set; }
         //}
         
-        // Sample Enum
+        // ! Sample Enum
         //public enum EffectiveRank
         //{
         //    _0 = 0,
