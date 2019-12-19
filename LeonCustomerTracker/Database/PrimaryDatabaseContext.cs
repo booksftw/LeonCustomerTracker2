@@ -26,7 +26,8 @@ namespace LeonCustomerTracker.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_config["AzureDbConnString"]);
+            optionsBuilder.UseSqlServer("Server=tcp:leoncustomertracker20191217092838dbserver.database.windows.net,1433;Initial Catalog=LeonCustomerTracker20191217092838_db;Persist Security Info=False;User ID=znick46;Password=Zachary46!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            //optionsBuilder.UseSqlServer(_config["AzureDbConnString"]);
         }
 
         // Sample code for relationships

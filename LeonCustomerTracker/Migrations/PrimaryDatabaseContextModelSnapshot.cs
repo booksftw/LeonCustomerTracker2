@@ -19,7 +19,7 @@ namespace LeonCustomerTracker.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("LeonCustomerTracker.Models.Client", b =>
+            modelBuilder.Entity("LeonCustomerTracker.Entities.Client", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeonCustomerTracker.Migrations
 {
     [DbContext(typeof(PrimaryDatabaseContext))]
-    [Migration("20191211055003_init")]
-    partial class init
+    [Migration("20191219012921_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace LeonCustomerTracker.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("LeonCustomerTracker.Models.Client", b =>
+            modelBuilder.Entity("LeonCustomerTracker.Entities.Client", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
