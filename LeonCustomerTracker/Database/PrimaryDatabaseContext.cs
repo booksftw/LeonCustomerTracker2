@@ -6,22 +6,27 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using LeonCustomerTracker.Entities;
+using Microsoft.Extensions.Configuration;
 
 namespace LeonCustomerTracker.Database
 {
     public class PrimaryDatabaseContext : DbContext
     {
+        private readonly IConfiguration _config;
+
         // ! Samples of Tables in DB
         //public DbSet<Blog> Blogs { get; set; }
         //public DbSet<Post> Posts { get; set; }
         public DbSet<Client> Clients { get; set; }
 
-        public PrimaryDatabaseContext(DbContextOptions<PrimaryDatabaseContext> options) : base(options)
-        { }
+        public PrimaryDatabaseContext(DbContextOptions<PrimaryDatabaseContext> options, IConfiguration config) : base(options)
+        {
+            _config = config;
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-PIGFLT3;Initial Catalog=leoncustomertracker;Integrated Security=True");
+            optionsBuilder.UseSqlServer(_config["AzureDbConnString"]);
         }
 
         // Sample code for relationships

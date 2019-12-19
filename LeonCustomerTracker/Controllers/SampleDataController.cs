@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace LeonCustomerTracker.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
+
+        private readonly IConfiguration _config;
+
         private static string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -17,6 +21,11 @@ namespace LeonCustomerTracker.Controllers
         // NZ...
         // Constructor automatically created if ommited. 
         // You can inject your database into the constructor and save it to the props or you can inject it into each controller as singleton.
+        public SampleDataController(IConfiguration config)
+        {
+            _config = config;
+        }
+
 
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
@@ -58,6 +67,13 @@ namespace LeonCustomerTracker.Controllers
         //    _db.SaveChanges();
 
         //    // return if any
+        //}
+
+
+        // ! Sample Config key
+        //public void GetTest()
+        //{
+        //    var x = _config["YourKey"];
         //}
     }
 }

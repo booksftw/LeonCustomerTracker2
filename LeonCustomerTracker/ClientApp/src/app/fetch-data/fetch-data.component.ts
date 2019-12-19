@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { text } from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-fetch-data',
@@ -12,6 +13,8 @@ export class FetchDataComponent {
     http.get<WeatherForecast[]>(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
       this.forecasts = result;
     }, error => console.error(error));
+
+    http.get(baseUrl + 'api/Base/GetTest', { responseType: "text" }).subscribe(r => console.log("RECEVIED: ", r));
   }
 }
 

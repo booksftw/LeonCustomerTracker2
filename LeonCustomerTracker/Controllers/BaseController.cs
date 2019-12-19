@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using LeonCustomerTracker.ApiModels;
-using LeonCustomerTracker.Database;
-using LeonCustomerTracker.Entities;
 using LeonCustomerTracker.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +9,9 @@ namespace LeonCustomerTracker.Controllers
     {
 
         public BaseController()
-        {}
+        {
+
+        }
 
         [HttpPost("[action]")]
         public void AddClient( [FromBody] ClientDetailsDto clientData, [FromServices] IClientService clientService) // ! Set Type on front and backend
@@ -25,6 +21,10 @@ namespace LeonCustomerTracker.Controllers
         }
 
 
-
+        [HttpGet("[action]")]
+        public string GetTest()
+        {
+            return "test controller";
+        }
     }
 }
